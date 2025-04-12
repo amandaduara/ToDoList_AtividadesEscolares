@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="geral">
+
+        <!-- Exibindo as atividade -->
+        <h2>Atividades</h2>
+
+        <table id="atividadeTable">
+            <thead>
+                <tr>
+                    <th>ID Atividade</th>
+                    <th>Matéria</th>
+                    <th>Descrição</th>
+                    <th>Data de vencimento</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <!-- Criando uma nova atividade -->
+        <h2>Adicionar Tarefa</h2>
+        <form id="addTarefaForm">
+
+
+            <label for="tarefa">ID Tarefa:</label>
+            <input type="text" id="tarefa" required>
+
+            <label for="materia">Matéria:</label>
+            <input type="text" id="materia" required>
+
+            <label for="descricao">Descrição da atividade:</label>
+            <input type="text" id="descricao" required>
+
+            <label for="data">Data de vencimento:</label>
+            <input type="date" id="data" required>
+
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <!-- Atualizando uma nova atividade -->
+        <h2>Atualizar Atividade</h2>
+        <form id="updateAtividadeForm">
+
+            <label for="updateId">ID da Atividade:</label>
+            <input type="text" id="updateId" required>
+
+            <label for="updateMateria">Matéria:</label>
+            <input type="text" id="updateMateria" required>
+
+            <label for="updateDescricao">Descrição:</label>
+            <input type="text" id="updateDescricao" required>
+
+            <label for="updateData">Data do vencimento:</label>
+            <input type="date" id="updateData" required>
+
+            <button type="submit">Atualizar</button>
+        </form>
+
+        <!-- Excluindo uma nova atividade -->
+        <h2>Excluir Atividade</h2>
+        <form id="deleteAtividadeForm">
+            <label for="deleteId">Id da Tarefa:</label>
+            <input type="number" id="deleteId" required>
+
+            <button type="submit">Excluir</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    function getAtividades(){
+        fetch('https://localhost:7125/api/atividades/atividades')
+            .then(response => response.json())
+            .then(data => {
+                const atividadeTable = document.getElementById('atividadeTable');
+                const tbody = atividadeTable.querySelector('tbody');
+                tbody.innerHTML = '';
+
+                data.forEach(atividade => {
+                    const row = document.createElement('tr');
+
+                    const idCell = document.createElement('td');
+                    idCell.textContent = atividade.id_tarefa;
+                    row.appendChild(idCell);
+
+                    const materiaCell = document.createElement('td');
+                    materiaCell.textContent = atividade.materia;
+                    row.appendChild(materiaCell);
+
+                    const descricaoCell = document.createElement('td');
+                    descricaoCell.textContent = atividade.descricao;
+                    row.appendChild(descricaoCell);
+
+                    const dataCell = document.createElement('td');
+                    dataCell.textContent = atividade.data_atividade;
+                    row.appendChild(dataCell);
+
+                    const actionsCell = document.createElement('td');
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Excluir';
+                    deleteButton.addEventListener('click', () => deleteAtividade(atividade.id_tarefa));
+                    actionsCell.appendChild(deleteButton);
+                    row.appendChild(actionsCell);
+
+                    tbody.appendChild(row);
+                });
+            });
+    }
+
+    function addAtividade(event) {
+        event.preventDefault();
+
+        const tarefa = parseInt(document.getElementById('tarefa').value);
+        const materia = document.getElementById('materia').value;
+        const descricao = document.getElementById('descricao').value;
+        const data = document.getElementById('data').value;
+
+        const atividade =
+        {
+            id_tarefa: tarefa,
+            materia: materia,
+            descricao: descricao,
+            data_atividade: data
+        };
+
+        fetch('https://localhost:7125/api/atividades',
+        {
+            method: 'POST',
+            headers:
+            {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(atividade)
+        })
+        .then(response => {
+            if (response.ok)
+            {
+                document.getElementById('tarefa').value = '';
+                document.getElementById('materia').value = '';
+                document.getElementById('descricao').value = '';
+                document.getElementById('data').value = '';
+                getAtividades();
+            }
+        });
+    }
+
+    function updateAtividade(event)
+    {
+        event.preventDefault();
+
+        const id_tarefa = parseInt(document.getElementById('updateId').value);
+        const materia = document.getElementById('updateMateria').value;
+        const descricao = document.getElementById('updateDescricao').value;
+        const data = document.getElementById('updateData').value;
+
+        const atividade =
+        {
+            id_tarefa: tarefa,
+            materia: materia,
+            descricao: descricao,
+            data_atividade: data
+        };
+
+        fetch(`https://localhost:7125/api/atividades/${id_tarefa}`,
+        {
+            method: 'PUT',
+            headers:
+            {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(atividade)
+        })
+
+        .then(response => {
+            if(response.ok) {
+                document.getElementById('updateId').value = '';
+                document.getElementById('updateMateria').value = '';
+                document.getElementById('updateDescricao').value = '';
+                document.getElementById('updateData').value = '';
+                getAtividades();
+            }
+        });
+    }
+
+    function deleteAtividade(id_tarefa)
+    {
+        fetch(`https://localhost:7125/api/atividades/${id_tarefa}`,
+        {
+            method: 'DELETE'
+        })
+
+        .then(response => {
+            if (response.ok)
+            {
+                getAtividades();
+            }
+        });
+    }
+
+    document.getElementById('addTarefaForm').addEventListener('submit', addAtividade);
+    document.getElementById('updateAtividadeForm').addEventListener('submit', updateAtividade);
+    document.getElementById('deleteAtividadeForm').addEventListener('submit', event =>{
+        event.preventDefault();
+        const id = parseInt(document.getElementById('deleteId').value);
+        deleteAtividade(id);
+    });
+
+    getAtividades();
+</script>
