@@ -23,9 +23,8 @@ namespace ToDoList_AtividadesEscolares.Controllers
         {
             using (SqlConnection connection = new SqlConnection(StringBD))
             {
-                string query = "Insert into AdicionarTarefa (id_tarefa, materia, descricao, data_atividade) values (@id_tarefa, @materia, @descricao, @data_atividade)";
+                string query = "Insert into AdicionarTarefa (materia, descricao, data_atividade) values (@materia, @descricao, @data_atividade)";
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id_tarefa", atividade.id_tarefa);
                 cmd.Parameters.AddWithValue("@materia", atividade.materia);
                 cmd.Parameters.AddWithValue("@descricao", atividade.descricao);
                 cmd.Parameters.AddWithValue("@data_atividade", atividade.data_atividade);
@@ -84,7 +83,7 @@ namespace ToDoList_AtividadesEscolares.Controllers
         {
             using (SqlConnection connection = new SqlConnection(StringBD))
             {
-                string query = "Update AdicionarTarefa set id_tarefa = @id_tarefa, materia = @materia, descricao = @descricao, data_atividade = @data_atividade where id_tarefa = @id_tarefa";
+                string query = "Update AdicionarTarefa set materia = @materia, descricao = @descricao, data_atividade = @data_atividade where id_tarefa = @id_tarefa";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@id_tarefa", id_tarefa);
                 cmd.Parameters.AddWithValue("@materia", atividade.materia);

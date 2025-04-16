@@ -73,7 +73,7 @@ input {
     box-sizing: border-box;
 }
 
-.geral {
+.container {
     max-width: 1024px;
     margin: 20px auto;
     background-color: white;

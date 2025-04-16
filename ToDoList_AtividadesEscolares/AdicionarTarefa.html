@@ -7,31 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="geral">
+    <div class="container">
 
         <!-- Exibindo as atividade -->
         <h2>Atividades</h2>
 
         <table id="atividadeTable">
             <thead>
-                <tr>
-                    <th>ID Atividade</th>
+                <tr> <!-- Cabeçalho da tabela -->
                     <th>Matéria</th>
                     <th>Descrição</th>
                     <th>Data de vencimento</th>
                 </tr>
             </thead>
             <tbody>
+                <!-- As atividades serão inseridas aqui via JS -->
             </tbody>
         </table>
 
         <!-- Criando uma nova atividade -->
         <h2>Adicionar Tarefa</h2>
-        <form id="addTarefaForm">
-
-
-            <label for="tarefa">ID Tarefa:</label>
-            <input type="text" id="tarefa" required>
+        <form id="addAtividadeForm">
 
             <label for="materia">Matéria:</label>
             <input type="text" id="materia" required>
@@ -49,8 +45,7 @@
         <h2>Atualizar Atividade</h2>
         <form id="updateAtividadeForm">
 
-            <label for="updateId">ID da Atividade:</label>
-            <input type="text" id="updateId" required>
+            <input type="hidden" id="updateId"> <!-- Campo oculto que guarda o Id da atividade a ser atualizada -->
 
             <label for="updateMateria">Matéria:</label>
             <input type="text" id="updateMateria" required>
@@ -63,35 +58,24 @@
 
             <button type="submit">Atualizar</button>
         </form>
-
-        <!-- Excluindo uma nova atividade -->
-        <h2>Excluir Atividade</h2>
-        <form id="deleteAtividadeForm">
-            <label for="deleteId">Id da Tarefa:</label>
-            <input type="number" id="deleteId" required>
-
-            <button type="submit">Excluir</button>
-        </form>
     </div>
 </body>
 </html>
 
 <script>
+    // --- Função para buscar e exibir todas as atividades da API ---
     function getAtividades(){
         fetch('https://localhost:7125/api/atividades/atividades')
             .then(response => response.json())
             .then(data => {
                 const atividadeTable = document.getElementById('atividadeTable');
                 const tbody = atividadeTable.querySelector('tbody');
-                tbody.innerHTML = '';
+                tbody.innerHTML = ''; // Limpa a tabela antes de preencher novamente
 
-                data.forEach(atividade => {
-                    const row = document.createElement('tr');
+                data.forEach(atividade => { // Para cada atividade recebida da API...
+                    const row = document.createElement('tr'); // Cria uma nova linha da tabela
 
-                    const idCell = document.createElement('td');
-                    idCell.textContent = atividade.id_tarefa;
-                    row.appendChild(idCell);
-
+                    // Cria e preenche a célula da matéria
                     const materiaCell = document.createElement('td');
                     materiaCell.textContent = atividade.materia;
                     row.appendChild(materiaCell);
@@ -104,34 +88,52 @@
                     dataCell.textContent = atividade.data_atividade;
                     row.appendChild(dataCell);
 
+                    // Cria os botões de excluir e atualizar uma atividade
                     const actionsCell = document.createElement('td');
+                    row.appendChild(actionsCell); // Adiciona os botões na linha
+                    tbody.appendChild(row); // Adiciona a linha na tabela
+
+                    // Botão de excluir ao lado de cada tarefa
                     const deleteButton = document.createElement('button');
                     deleteButton.textContent = 'Excluir';
                     deleteButton.addEventListener('click', () => deleteAtividade(atividade.id_tarefa));
-                    actionsCell.appendChild(deleteButton);
-                    row.appendChild(actionsCell);
+                    actionsCell.appendChild(deleteButton); 
 
-                    tbody.appendChild(row);
+                    // Botão de atualizar ao lado de cada tarefa
+                    const updateButton = document.createElement('button');
+                    updateButton.textContent = 'Atualizar';
+                    updateButton.addEventListener('click', () => preencherUpdateForm(atividade));
+                    actionsCell.appendChild(updateButton);
+
+                    // Função que preenche o formulário de atualização com os dados da atividade clicada
+                    function preencherUpdateForm(atividade) {
+                        document.getElementById('updateId').value = atividade.id_tarefa;
+                        document.getElementById('updateMateria').value = atividade.materia;
+                        document.getElementById('updateDescricao').value = atividade.descricao;
+                        document.getElementById('updateData').value = atividade.data_atividade;
+                    }
                 });
             });
     }
 
+    // --- Função para adicionar uma nova atividade ---
     function addAtividade(event) {
-        event.preventDefault();
+        event.preventDefault(); // Impede que a página recarregue ao enviar o formulário
 
-        const tarefa = parseInt(document.getElementById('tarefa').value);
+        // Valores capturados dos campos do formulário
         const materia = document.getElementById('materia').value;
         const descricao = document.getElementById('descricao').value;
         const data = document.getElementById('data').value;
 
+        // Objeto sendo criado com os dados da nova atividade
         const atividade =
         {
-            id_tarefa: tarefa,
             materia: materia,
             descricao: descricao,
             data_atividade: data
         };
 
+        // Envia os dados para a API usando o método POST
         fetch('https://localhost:7125/api/atividades',
         {
             method: 'POST',
@@ -144,19 +146,20 @@
         .then(response => {
             if (response.ok)
             {
-                document.getElementById('tarefa').value = '';
+                // Limpa o formulário após o envio
                 document.getElementById('materia').value = '';
                 document.getElementById('descricao').value = '';
                 document.getElementById('data').value = '';
-                getAtividades();
+                getAtividades(); // Atualiza a tabela após adicionar uma atividade
             }
         });
     }
 
-    function updateAtividade(event)
-    {
-        event.preventDefault();
+    // --- Função para atualizar de uma atividade ---
+    function updateAtividade(event) {
+        event.preventDefault(); // Impede o recarregamento da página
 
+        // Captura os dados preenchidos no formulário de atualização
         const id_tarefa = parseInt(document.getElementById('updateId').value);
         const materia = document.getElementById('updateMateria').value;
         const descricao = document.getElementById('updateDescricao').value;
@@ -164,33 +167,36 @@
 
         const atividade =
         {
-            id_tarefa: tarefa,
+            // Monta o objeto com os dados atualizados
+            id_tarefa: id_tarefa,
             materia: materia,
             descricao: descricao,
             data_atividade: data
         };
 
+        // Envia os dados atualizados para a API usando PUT
         fetch(`https://localhost:7125/api/atividades/${id_tarefa}`,
-        {
-            method: 'PUT',
-            headers:
             {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(atividade)
-        })
-
+                method: 'PUT',
+                headers:
+                {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(atividade)
+            })
         .then(response => {
-            if(response.ok) {
-                document.getElementById('updateId').value = '';
-                document.getElementById('updateMateria').value = '';
-                document.getElementById('updateDescricao').value = '';
-                document.getElementById('updateData').value = '';
-                getAtividades();
+            if (response.ok)
+            {
+                 // Limpa o formulário após a atualização
+                 document.getElementById('updateId').value = '';
+                 document.getElementById('updateMateria').value = '';
+                 document.getElementById('updateDescricao').value = '';
+                 document.getElementById('updateData').value = '';
+                getAtividades(); // Atualiza a tabela após atualizar uma atividade
             }
         });
     }
-
+    // --- Função para deletar uma atividade pelo ID ---
     function deleteAtividade(id_tarefa)
     {
         fetch(`https://localhost:7125/api/atividades/${id_tarefa}`,
@@ -201,18 +207,15 @@
         .then(response => {
             if (response.ok)
             {
-                getAtividades();
+                getAtividades(); // Atualiza a tabela após excluir
             }
         });
     }
 
-    document.getElementById('addTarefaForm').addEventListener('submit', addAtividade);
+    // Liga os formulários às funções usando eventos
+    document.getElementById('addAtividadeForm').addEventListener('submit', addAtividade);
     document.getElementById('updateAtividadeForm').addEventListener('submit', updateAtividade);
-    document.getElementById('deleteAtividadeForm').addEventListener('submit', event =>{
-        event.preventDefault();
-        const id = parseInt(document.getElementById('deleteId').value);
-        deleteAtividade(id);
-    });
 
+    // Mostra as atividades já cadastradas ao carregar a página
     getAtividades();
 </script>

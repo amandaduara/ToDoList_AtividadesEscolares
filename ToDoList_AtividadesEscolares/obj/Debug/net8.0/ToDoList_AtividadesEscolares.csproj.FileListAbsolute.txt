@@ -79,3 +79,4 @@ C:\Users\claud\Documents\CursosProgramacao\MeusPojetos\ToDoList_AtividadesEscola
 C:\Users\claud\Documents\CursosProgramacao\MeusPojetos\ToDoList_AtividadesEscolares\ToDoList_AtividadesEscolares\obj\Debug\net8.0\ToDoList_AtividadesEscolares.pdb
 C:\Users\claud\Documents\CursosProgramacao\MeusPojetos\ToDoList_AtividadesEscolares\ToDoList_AtividadesEscolares\obj\Debug\net8.0\ToDoList_AtividadesEscolares.genruntimeconfig.cache
 C:\Users\claud\Documents\CursosProgramacao\MeusPojetos\ToDoList_AtividadesEscolares\ToDoList_AtividadesEscolares\obj\Debug\net8.0\ref\ToDoList_AtividadesEscolares.dll
+C:\Users\claud\Documents\CursosProgramacao\MeusPojetos\ToDoList_AtividadesEscolares\ToDoList_AtividadesEscolares\obj\Debug\net8.0\ToDoList_AtividadesEscolares.sourcelink.json
