@@ -29,8 +29,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\script.js",
+              "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\script.js",
+              "ToolTip": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\script.js",
+              "RelativeToolTip": "ToDoList_AtividadesEscolares\\script.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-16T20:43:01.013Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -41,26 +55,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "script.js",
-              "DocumentMoniker": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\script.js",
-              "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\script.js",
-              "ToolTip": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\script.js",
-              "RelativeToolTip": "ToDoList_AtividadesEscolares\\script.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-16T20:43:01.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\style.css",
               "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\style.css",
               "ToolTip": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\style.css",
               "RelativeToolTip": "ToDoList_AtividadesEscolares\\style.css",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAQwG8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-04-16T20:24:20.88Z",
               "EditorCaption": ""
@@ -86,7 +87,7 @@
               "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\AdicionarTarefa.html",
               "ToolTip": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\AdicionarTarefa.html",
               "RelativeToolTip": "ToDoList_AtividadesEscolares\\AdicionarTarefa.html",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAD8AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-04-12T12:07:09.09Z",
               "EditorCaption": ""

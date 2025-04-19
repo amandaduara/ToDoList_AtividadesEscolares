@@ -23,6 +23,38 @@ function getAtividades() {
                 dataCell.textContent = atividade.data_atividade;
                 row.appendChild(dataCell);
 
+                // --- Fazendo a contagem de vencimento da atividade ---
+                const dataSistema = new Date();
+                dataSistema.setHours(0, 0, 0, 0); // Zerando as horas
+
+                const [ano, mes, dia] = atividade.data_atividade.split('-'); // Desestruturando a data e guardando nas variáveis ano, mes e dia
+                const dataAtividade = new Date(ano, mes - 1, dia); // Subtraindo um mes para ficar certo, no JS os meses vão de 0 a 11. Ex: abril = 3
+                dataAtividade.setHours(0, 0, 0, 0);
+
+                // Calculando a diferença de dias inteiros entre duas datas
+                const vencimentoAtividade = Math.floor((dataAtividade - dataSistema) / (1000 * 60 * 60 * 24));
+
+                const vencimentoAtividadeCell = document.createElement('td');
+                row.appendChild(vencimentoAtividadeCell);
+
+                if (vencimentoAtividade === 1) {
+                    vencimentoAtividadeCell.textContent = vencimentoAtividade + " dia restante";
+                }
+                else if (vencimentoAtividade === 0) {
+                    vencimentoAtividadeCell.textContent = "O vencimento é hoje!";
+                }
+                else if (vencimentoAtividade > 1) {
+                    vencimentoAtividadeCell.textContent = vencimentoAtividade + " dias restantes";
+                }
+                else if (vencimentoAtividade === -1) {
+                    vencimentoAtividadeCell.textContent = "Venceu a " + Math.abs(vencimentoAtividade) + " dia";
+                }
+                else {
+                    vencimentoAtividadeCell.textContent = "Venceu a " + Math.abs(vencimentoAtividade) + " dias";
+                }
+                // --- Fim da contagem de vencimento da atividade ---
+
+
                 // Cria os botões de excluir e atualizar uma atividade
                 const actionsCell = document.createElement('td');
                 row.appendChild(actionsCell); // Adiciona os botões na linha
