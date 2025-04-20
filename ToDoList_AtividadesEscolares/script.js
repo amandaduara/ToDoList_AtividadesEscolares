@@ -3,6 +3,9 @@ function getAtividades() {
     fetch('https://localhost:7125/api/atividades/atividades')
         .then(response => response.json())
         .then(data => {
+
+            data.sort((a, b) => new Date(a.data_atividade) - new Date(b.data_atividade)); // Organiza as datas em ordem crescente
+
             const atividadeTable = document.getElementById('atividadeTable');
             const tbody = atividadeTable.querySelector('tbody');
             tbody.innerHTML = ''; // Limpa a tabela antes de preencher novamente
@@ -20,15 +23,14 @@ function getAtividades() {
                 row.appendChild(descricaoCell);
 
                 const dataCell = document.createElement('td');
-                dataCell.textContent = atividade.data_atividade;
+                const [ano, mes, dia] = atividade.data_atividade.split('-'); // Desestruturando a data e guardando nas variáveis ano, mes e dia
+                const dataAtividade = new Date(ano, mes - 1, dia); // Subtraindo um mes para ficar certo, no JS os meses vão de 0 a 11. Ex: abril = 3
+                dataCell.textContent = dataAtividade.toLocaleDateString('pt-BR'); // Exibindo no formato brasileiro a data
                 row.appendChild(dataCell);
 
                 // --- Fazendo a contagem de vencimento da atividade ---
                 const dataSistema = new Date();
                 dataSistema.setHours(0, 0, 0, 0); // Zerando as horas
-
-                const [ano, mes, dia] = atividade.data_atividade.split('-'); // Desestruturando a data e guardando nas variáveis ano, mes e dia
-                const dataAtividade = new Date(ano, mes - 1, dia); // Subtraindo um mes para ficar certo, no JS os meses vão de 0 a 11. Ex: abril = 3
                 dataAtividade.setHours(0, 0, 0, 0);
 
                 // Calculando a diferença de dias inteiros entre duas datas
@@ -53,7 +55,6 @@ function getAtividades() {
                     vencimentoAtividadeCell.textContent = "Venceu a " + Math.abs(vencimentoAtividade) + " dias";
                 }
                 // --- Fim da contagem de vencimento da atividade ---
-
 
                 // Cria os botões de excluir e atualizar uma atividade
                 const actionsCell = document.createElement('td');
