@@ -61,17 +61,21 @@ function getAtividades() {
                 row.appendChild(actionsCell); // Adiciona os botões na linha
                 tbody.appendChild(row); // Adiciona a linha na tabela
 
-                // Botão de excluir ao lado de cada tarefa
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Excluir';
-                deleteButton.addEventListener('click', () => deleteAtividade(atividade.id_tarefa));
-                actionsCell.appendChild(deleteButton);
-
                 // Botão de atualizar ao lado de cada tarefa
                 const updateButton = document.createElement('button');
-                updateButton.textContent = 'Atualizar';
+                updateButton.className = 'btn btn-sm'; // estilo Bootstrap
+                updateButton.setAttribute('data-bs-toggle', 'modal');
+                updateButton.setAttribute('data-bs-target', '#updateAtividade');
+                updateButton.innerHTML = '<img src="img/iconeEditar.png" alt="Editar" width="20" height="20">';
                 updateButton.addEventListener('click', () => preencherUpdateForm(atividade));
                 actionsCell.appendChild(updateButton);
+
+                // Botão de excluir ao lado de cada tarefa
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'btn btn-sm me-2'; // estilo Bootstrap
+                deleteButton.innerHTML = '<img src="img/iconeLixeira.png" alt="Excluir" width="20" height="20">';
+                deleteButton.addEventListener('click', () => deleteAtividade(atividade.id_tarefa));
+                actionsCell.appendChild(deleteButton);
 
                 // Função que preenche o formulário de atualização com os dados da atividade clicada
                 function preencherUpdateForm(atividade) {

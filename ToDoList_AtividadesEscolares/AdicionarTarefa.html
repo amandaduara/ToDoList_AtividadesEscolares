@@ -4,62 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividades</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"> <!-- Bootstratp -->
 </head>
 <body>
-    <div class="container">
 
-        <!-- Exibindo as atividade -->
-        <h2>Atividades</h2>
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card shadow-lg rounded" style="width: 100rem; height: 50rem">
+            <div class="card-body text-center mt-5">
+                <h1>Minhas atividades escolares!</h1>
+                <h6 class="card-subtitle mb-4 text-body-secondary">Organize suas tarefas, atinja seus objetivos.</h6>
+                <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#adicionarAtividade">
+                    + Adicionar
+                </button>
+            </div>
 
-        <table id="atividadeTable">
-            <thead>
-                <tr> <!-- Cabeçalho da tabela -->
-                    <th>Matéria</th>
-                    <th>Descrição</th>
-                    <th>Data de vencimento</th>
-                    <th>Vence em: </th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- As atividades serão inseridas aqui via JS -->
-            </tbody>
-        </table>
+            <!-- Exibindo as atividade -->
+            <div class="table-container mt-3 mx-auto" style="width: 95%; height: 40rem; overflow-y: auto;">
+                <table class="table table-bordered rounded overflow-hidden table-hover text-center " id="atividadeTable">
+                    <thead class="sticky-top table-primary">
+                        <tr>
+                            <th scope="col">Matéria</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Vencimento</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
 
-        <!-- Criando uma nova atividade -->
-        <h2>Adicionar Tarefa</h2>
-        <form id="addAtividadeForm">
+            <!-- Modal adicionar atividade-->
+            <div class="modal fade" id="adicionarAtividade" tabindex="-1" aria-labelledby="adicionarAtividade" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="adicionarAtividadeLabel">Adicionar atividade</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
 
-            <label for="materia">Matéria:</label>
-            <input type="text" id="materia" required>
+                            <!-- Adicionando uma nova atividade -->
+                            <form id="addAtividadeForm">
+                                <div class="mb-3">
+                                    <label for="materia" class="form-label">Matéria:</label>
+                                    <input type="text" class="form-control" id="materia" aria-describedby="emailHelp" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descricao" class="form-label">Descrição da atividade:</label>
+                                    <input type="text" class="form-control" id="descricao" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="data" class="form-label">Data de vencimento:</label>
+                                    <input type="date" class="form-control" id="data" required>
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Criar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <label for="descricao">Descrição da atividade:</label>
-            <input type="text" id="descricao" required>
+            <!-- Modal atualizar atividade-->
+            <div class="modal fade" id="updateAtividade" tabindex="-1" aria-labelledby="updateAtividade" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="updateAtividadeFormLabel">Atualizar atividade</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
 
-            <label for="data">Data de vencimento:</label>
-            <input type="date" id="data" required>
+                            <!-- Atualizando uma nova atividade -->
+                            <form id="updateAtividadeForm">
+                                <div class="mb-3">
+                                    <input type="hidden" id="updateId"> <!-- Campo oculto que guarda o Id da atividade a ser atualizada -->
 
-            <button type="submit">Adicionar</button>
-        </form>
-
-        <!-- Atualizando uma nova atividade -->
-        <h2>Atualizar Atividade</h2>
-        <form id="updateAtividadeForm">
-
-            <input type="hidden" id="updateId"> <!-- Campo oculto que guarda o Id da atividade a ser atualizada -->
-
-            <label for="updateMateria">Matéria:</label>
-            <input type="text" id="updateMateria" required>
-
-            <label for="updateDescricao">Descrição:</label>
-            <input type="text" id="updateDescricao" required>
-
-            <label for="updateData">Data do vencimento:</label>
-            <input type="date" id="updateData" required>
-
-            <button type="submit">Atualizar</button>
-        </form>
+                                    <label for="updateMateria" class="form-label">Matéria:</label>
+                                    <input type="text" class="form-control" id="updateMateria" aria-describedby="emailHelp" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updateDescricao" class="form-label">Descrição da atividade:</label>
+                                    <input type="text" class="form-control" id="updateDescricao" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updateData" class="form-label">Data de vencimento:</label>
+                                    <input type="date" class="form-control" id="updateData" required>
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Atualizar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script> <!-- Bootstrap -->
 </body>
 </html>
