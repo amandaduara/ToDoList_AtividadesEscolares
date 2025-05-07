@@ -61,6 +61,15 @@ function getAtividades() {
                 row.appendChild(actionsCell); // Adiciona os botões na linha
                 tbody.appendChild(row); // Adiciona a linha na tabela
 
+                // Botão de concluir ao lado de cada tarefa
+                const concluirButton = document.createElement('button');
+                concluirButton.className = 'btn btn-sm me-2'; // estilo Bootstrap
+                concluirButton.innerHTML = '<img src="img/iconeCheck.png" alt="Concluir" width="20" height="20">';
+                concluirButton.addEventListener('click', () => {
+                    row.classList.toggle('riscado');
+                });
+                actionsCell.appendChild(concluirButton);
+
                 // Botão de atualizar ao lado de cada tarefa
                 const updateButton = document.createElement('button');
                 updateButton.className = 'btn btn-sm'; // estilo Bootstrap
@@ -70,13 +79,6 @@ function getAtividades() {
                 updateButton.addEventListener('click', () => preencherUpdateForm(atividade));
                 actionsCell.appendChild(updateButton);
 
-                // Botão de excluir ao lado de cada tarefa
-                const deleteButton = document.createElement('button');
-                deleteButton.className = 'btn btn-sm me-2'; // estilo Bootstrap
-                deleteButton.innerHTML = '<img src="img/iconeLixeira.png" alt="Excluir" width="20" height="20">';
-                deleteButton.addEventListener('click', () => deleteAtividade(atividade.id_tarefa));
-                actionsCell.appendChild(deleteButton);
-
                 // Função que preenche o formulário de atualização com os dados da atividade clicada
                 function preencherUpdateForm(atividade) {
                     document.getElementById('updateId').value = atividade.id_tarefa;
@@ -84,6 +86,14 @@ function getAtividades() {
                     document.getElementById('updateDescricao').value = atividade.descricao;
                     document.getElementById('updateData').value = atividade.data_atividade;
                 }
+
+                // Botão de excluir ao lado de cada tarefa
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'btn btn-sm me-2'; // estilo Bootstrap
+                deleteButton.innerHTML = '<img src="img/iconeLixeira.png" alt="Excluir" width="20" height="20">';
+                deleteButton.addEventListener('click', () => deleteAtividade(atividade.id_tarefa));
+                actionsCell.appendChild(deleteButton);
+
             });
         });
 }
