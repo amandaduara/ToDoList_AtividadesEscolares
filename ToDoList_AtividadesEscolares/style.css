@@ -1,5 +1,81 @@
-﻿.riscado {
+﻿body {
+    background-image: url('img/TelaFundo2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.riscado {
     text-decoration: line-through;
     opacity: 0.5;
     color: gray;
 }
+
+h1{
+    font-family: "Jua", sans-serif;
+    font-size: 4.5rem;
+    color: #F27999;
+    justify-content: center;
+}
+
+.btn-primary{
+    background-color: #F27999;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #fddf71; /* cor no hover */
+    border-color: none;
+}
+
+.card-body h6 {
+    font-family: "Sour Gummy", sans-serif;
+    color: #63b8ae;
+    font-size: 1.5rem;
+}
+
+th {
+    color: #ffffff !important;
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 1.3rem;
+}
+
+#col1{
+    background-color: #B3B7DC;
+}
+
+#col2{
+    background-color: #AAD7D2;
+}
+
+#col3{
+    background-color: #B7D6EB;
+}
+
+#col4{
+    background-color: #B3B7DC;
+}
+
+#col5{
+    background-color: #AAD7D2;
+}
+
+.modal-header{
+    background-color: #F27999;
+}
+
+h4{
+    font-family: "Jua", sans-serif;
+    color: #ffffff;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+

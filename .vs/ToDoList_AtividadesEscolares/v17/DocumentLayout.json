@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|c:\\users\\claud\\documents\\cursosprogramacao\\meuspojetos\\todolist_atividadesescolares\\todolist_atividadesescolares\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|solutionrelative:todolist_atividadesescolares\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|c:\\users\\claud\\documents\\cursosprogramacao\\meuspojetos\\todolist_atividadesescolares\\todolist_atividadesescolares\\adicionartarefa.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|solutionrelative:todolist_atividadesescolares\\adicionartarefa.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|c:\\users\\claud\\documents\\cursosprogramacao\\meuspojetos\\todolist_atividadesescolares\\todolist_atividadesescolares\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|solutionrelative:todolist_atividadesescolares\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|c:\\users\\claud\\documents\\cursosprogramacao\\meuspojetos\\todolist_atividadesescolares\\todolist_atividadesescolares\\adicionartarefa.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|solutionrelative:todolist_atividadesescolares\\adicionartarefa.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|c:\\users\\claud\\documents\\cursosprogramacao\\meuspojetos\\todolist_atividadesescolares\\todolist_atividadesescolares\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|solutionrelative:todolist_atividadesescolares\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\claud\\AppData\\Local\\SourceServer\\7caa679c0c79aede788256e7e1e38fe3791b48936d931be105cf9fc86920d410\\ToDoList_AtividadesEscolares\\Controllers\\NovaAtividadeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|c:\\users\\claud\\documents\\cursosprogramacao\\meuspojetos\\todolist_atividadesescolares\\todolist_atividadesescolares\\novaatividade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84622032-9471-4E80-A601-E2E9DD36B46D}|ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares.csproj|solutionrelative:todolist_atividadesescolares\\novaatividade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\claud\\AppData\\Local\\SourceServer\\7caa679c0c79aede788256e7e1e38fe3791b48936d931be105cf9fc86920d410\\ToDoList_AtividadesEscolares\\Controllers\\NovaAtividadeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,53 +47,53 @@
               "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\style.css",
               "ToolTip": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\style.css",
               "RelativeToolTip": "ToDoList_AtividadesEscolares\\style.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-05-07T13:14:16.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "script.js",
               "DocumentMoniker": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\script.js",
               "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\script.js",
               "ToolTip": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\script.js",
               "RelativeToolTip": "ToDoList_AtividadesEscolares\\script.js",
-              "ViewState": "AgIAADUAAAAAAAAAAAAQwEYAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAUwMUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-16T20:43:01.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AdicionarTarefa.html",
               "DocumentMoniker": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\AdicionarTarefa.html",
               "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\AdicionarTarefa.html",
               "ToolTip": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\AdicionarTarefa.html",
               "RelativeToolTip": "ToDoList_AtividadesEscolares\\AdicionarTarefa.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-04-12T12:07:09.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "NovaAtividadeController.cs",
               "DocumentMoniker": "C:\\Users\\claud\\AppData\\Local\\SourceServer\\7caa679c0c79aede788256e7e1e38fe3791b48936d931be105cf9fc86920d410\\ToDoList_AtividadesEscolares\\Controllers\\NovaAtividadeController.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\7caa679c0c79aede788256e7e1e38fe3791b48936d931be105cf9fc86920d410\\ToDoList_AtividadesEscolares\\Controllers\\NovaAtividadeController.cs",
               "ToolTip": "C:\\Users\\claud\\AppData\\Local\\SourceServer\\7caa679c0c79aede788256e7e1e38fe3791b48936d931be105cf9fc86920d410\\ToDoList_AtividadesEscolares\\Controllers\\NovaAtividadeController.cs",
               "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\7caa679c0c79aede788256e7e1e38fe3791b48936d931be105cf9fc86920d410\\ToDoList_AtividadesEscolares\\Controllers\\NovaAtividadeController.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T19:43:53.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "NovaAtividade.cs",
               "DocumentMoniker": "C:\\Users\\claud\\Documents\\CursosProgramacao\\MeusPojetos\\ToDoList_AtividadesEscolares\\ToDoList_AtividadesEscolares\\NovaAtividade.cs",
               "RelativeDocumentMoniker": "ToDoList_AtividadesEscolares\\NovaAtividade.cs",
