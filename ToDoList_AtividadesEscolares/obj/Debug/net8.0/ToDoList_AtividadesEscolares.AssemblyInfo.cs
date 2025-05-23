@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToDoList_AtividadesEscolares")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e90bd3a495db1e579920db00b01014f8476290e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a936bc894bdf9e9efcf41d224c97317684c8668")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToDoList_AtividadesEscolares")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToDoList_AtividadesEscolares")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

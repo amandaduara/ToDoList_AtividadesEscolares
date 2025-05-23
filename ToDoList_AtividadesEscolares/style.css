@@ -71,6 +71,12 @@ h4{
     justify-content: center;
 }
 
+input.form-control:focus{
+    outline: none !important;
+    border-color: #63b8ae !important;
+    box-shadow: 0 0 8px #63b8ae !important;
+}
+
 
 
 
